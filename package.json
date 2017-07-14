@@ -1,6 +1,6 @@
 {
   "name": "react-native-ark-local-notifications",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Manageable local notifications for React Native on iOS and Android.",
   "repository": {
     "type": "git",

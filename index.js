@@ -1,6 +1,6 @@
 import { NativeModules } from 'react-native'
 
-const RNLocalNotifications = { NativeModules }
+const { RNLocalNotifications } = NativeModules
 
 const ReactNativeLocalNotifications = {
   createNotification: (id, text, datetime, sound) => {
