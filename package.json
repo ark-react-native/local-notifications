@@ -1,27 +1,38 @@
 {
-  "name": "react-native-local-notifications",
+  "name": "react-native-ark-local-notifications",
   "version": "0.1.0",
   "description": "Manageable local notifications for React Native on iOS and Android.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wumke/react-native-local-notifications"
+    "url": "https://github.com/ark-react-native/local-notifications"
   },
   "keywords": [
-    "react",
-    "native",
-    "local",
-    "notification",
     "android",
-    "ios"
+    "ios",
+    "local",
+    "native",
+    "notification",
+    "react",
+    "react-native"
   ],
-  "author": "Wumke",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wumke/react-native-local-notifications/issues"
+  "author": "Rodrigo Scomação do Nascimento <rodrigo.sc.na@gmail.com> (http://www.rodrigosn.com/)",
+  "contributors": [
+    "Gabriel Rosas <me@gabrielrosas.com>"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
-  "homepage": "http://watchwimswork.be"
+  "peerDependencies": {
+    "react-native": ">=0.31.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.3.0",
+    "react-native": ">=0.31.0"
+  }
 }

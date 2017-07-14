@@ -1,15 +1,19 @@
-import {NativeModules} from 'react-native';
+import { NativeModules } from 'react-native'
 
-var RNLocalNotifications = {
-  createNotification: function(id, text, datetime,sound) {
-        NativeModules.RNLocalNotifications.createNotification(id, text, datetime, sound);
-  },
-  deleteNotification: function(id) {
-        NativeModules.RNLocalNotifications.deleteNotification(id);
-  },
-  updateNotification: function(id, text, datetime, sound) {
-        NativeModules.RNLocalNotifications.updateNotification(id, text, datetime, sound);
-  },
-};
+const RNLocalNotifications = { NativeModules }
 
-export default RNLocalNotifications;
+const ReactNativeLocalNotifications = {
+  createNotification: (id, text, datetime, sound) => {
+    RNLocalNotifications.createNotification(id, text, datetime, sound)
+  },
+
+  deleteNotification: (id) => {
+    RNLocalNotifications.deleteNotification(id)
+  },
+
+  updateNotification: (id, text, datetime, sound) => {
+    RNLocalNotifications.updateNotification(id, text, datetime, sound)
+  },
+}
+
+export default ReactNativeLocalNotifications

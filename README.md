@@ -1,10 +1,10 @@
-# react-native-local-notifications
-Manageable local notifications for React Native on iOS and Android. Create, update and delete local notifications by their unique id. The push notification title is the app name. When you open the app all displayed local notifications will be removed and the badge counter will be reset on iOS. 
+# react-native-ark-local-notifications
+Manageable local notifications for React Native on iOS and Android. Create, update and delete local notifications by their unique id. The push notification title is the app name. When you open the app all displayed local notifications will be removed and the badge counter will be reset on iOS.
 
 ## Setup
 
 ```bash
-npm install react-native-local-notifications
+npm install react-native-ark-local-notifications
 ```
 
 Or add the latest version as dependeny to your package.json.
@@ -16,7 +16,7 @@ Or add the latest version as dependeny to your package.json.
   },
   "dependencies": {
     ...
-    "react-native-local-notifications": "0.1.0",
+    "react-native-ark-local-notifications": "0.1.0",
     ...
   }
 ```
@@ -37,7 +37,7 @@ Or add the latest version as dependeny to your package.json.
       }
     }
     ```
-* Add Alarm.caf and Silence.caf to the Resources folder of your xcode project. (can be found in react-native-local-notifications/ios/RNLocalNotifications)
+* Add Alarm.caf and Silence.caf to the Resources folder of your xcode project. (can be found in react-native-ark-local-notifications/ios/RNLocalNotifications)
 
 ####Android
 * In the AndroidManifest.xml file of your android studio project add:
@@ -55,12 +55,12 @@ Or add the latest version as dependeny to your package.json.
   ```
 * In the settings.gradle
   ```
-    include ':react-native-local-notifications', ':app'
-    project(':react-native-local-notifications').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-local-notifications/android')
+    include ':react-native-ark-local-notifications', ':app'
+    project(':react-native-ark-local-notifications').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-ark-local-notifications/android')
   ```
 * In the build.gradle
   ```
-    compile project(':react-native-local-notifications')
+    compile project(':react-native-ark-local-notifications')
   ```
 * In MainApplication.java
   ```
@@ -79,7 +79,7 @@ Or add the latest version as dependeny to your package.json.
 ## Usage
 
 ```javascript
-import RNLocalNotifications from 'react-native-local-notifications';
+import RNLocalNotifications from 'react-native-ark-local-notifications';
 ...
 //RNLocalNotifications.createNotification(id, text, datetime, sound);
 RNLocalNotifications.createNotification(1, 'Some text', '2017-01-02 12:30', 'default');

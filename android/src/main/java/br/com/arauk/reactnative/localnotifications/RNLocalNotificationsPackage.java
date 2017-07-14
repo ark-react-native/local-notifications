@@ -1,4 +1,4 @@
-package com.github.wumke.RNLocalNotifications;
+package br.com.arauk.reactnative.localnotifications;
 
 import java.util.Arrays;
 import java.util.ArrayList;
