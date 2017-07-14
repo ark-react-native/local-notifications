@@ -4,7 +4,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
+
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -46,7 +46,7 @@ public class RNLocalNotificationsModule extends ReactContextBaseJavaModule {
     }
 
     public void createAlarm(Integer id, String text, String datetime, String sound, boolean update) {
-        if(update){
+        if (update) {
             this.deleteAlarm(id);
         }
 
@@ -61,7 +61,7 @@ public class RNLocalNotificationsModule extends ReactContextBaseJavaModule {
         Long timeInMillis = dateToMillis.getTime();
 
         Intent intent = new Intent(reactContext, AlarmReceiver.class);
-        intent.setAction("com.github.wumke.RNLocalNotifications.showAlarm");
+        intent.setAction("br.com.arauk.reactnative.localnotifications.showAlarm");
         intent.putExtra("id", id);
         intent.putExtra("text", text);
         intent.putExtra("datetime", datetime);
@@ -70,20 +70,21 @@ public class RNLocalNotificationsModule extends ReactContextBaseJavaModule {
         PendingIntent mAlarmSender = PendingIntent.getBroadcast(reactContext, id, intent, 0);
 
         Calendar date = Calendar.getInstance();
-        if(timeInMillis > date.getTimeInMillis()) {
+        if (timeInMillis > date.getTimeInMillis()) {
             alarmManager.set(AlarmManager.RTC_WAKEUP, timeInMillis, mAlarmSender);
         }
     }
 
     public void deleteAlarm(Integer id) {
         Intent intent = new Intent(reactContext, AlarmReceiver.class);
-        intent.setAction("com.github.wumke.RNLocalNotifications.showAlarm");
+        intent.setAction("br.com.arauk.reactnative.localnotifications.showAlarm");
 
         // cancel the alarm!
         PendingIntent pi = PendingIntent.getBroadcast(reactContext, id, intent, PendingIntent.FLAG_NO_CREATE);
-        if(pi != null){
+        if (pi != null) {
             pi.cancel();
         }
         alarmManager.cancel(pi);
     }
+
 }

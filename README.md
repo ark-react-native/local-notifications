@@ -42,7 +42,7 @@ Or add the latest version as dependeny to your package.json.
 ####Android
 * In the AndroidManifest.xml file of your android studio project add:
     ```
-    <receiver android:process=":remote" android:name="com.github.wumke.RNLocalNotifications.AlarmReceiver" android:exported="true"></receiver>
+    <receiver android:process=":remote" android:name="br.com.arauk.reactnative.localnotifications.AlarmReceiver" android:exported="true"></receiver>
     ```
 * In the MainActivity.java file of your android studio project add:
   ```
@@ -64,7 +64,7 @@ Or add the latest version as dependeny to your package.json.
   ```
 * In MainApplication.java
   ```
-    import com.github.wumke.RNLocalNotifications.RNLocalNotificationsPackage;
+    import br.com.arauk.reactnative.localnotifications.RNLocalNotificationsPackage;
     ...
     @Override
     protected List<ReactPackage> getPackages() {

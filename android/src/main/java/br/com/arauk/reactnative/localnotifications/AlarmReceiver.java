@@ -1,6 +1,5 @@
 package br.com.arauk.reactnative.localnotifications;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -12,23 +11,19 @@ import android.content.res.Resources;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (intent.getAction().equals("com.github.wumke.RNLocalNotifications.showAlarm")) {
+        if (intent.getAction().equals("br.com.arauk.reactnative.localnotifications.showAlarm")) {
             Integer id = intent.getExtras().getInt("id", 0);
             String text = intent.getExtras().getString("text", "");
             String datetime = intent.getExtras().getString("datetime", "");
             String sound = intent.getExtras().getString("sound", "");
 
-            if(!this.isAppOnForeground(context)) {
+            if (!this.isAppOnForeground(context)) {
                 // Set the icon, scrolling text and timestamp
                 Resources res = context.getResources();
                 String packageName = context.getPackageName();
@@ -64,7 +59,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
                 String shortenedDatetime = datetime.replace(":", "").replace("-", "").replace("/", "").replace("\\", "").replace(" ", "").substring(2);
                 Integer mId = Integer.parseInt(shortenedDatetime);
-                NotificationManager notificationManager = (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
+                NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
                 notificationManager.notify(mId, mBuilder.build());
             }
         }
