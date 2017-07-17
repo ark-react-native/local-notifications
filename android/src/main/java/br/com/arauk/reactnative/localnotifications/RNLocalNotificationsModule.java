@@ -14,14 +14,17 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+@SuppressWarnings("WeakerAccess")
 public class RNLocalNotificationsModule extends ReactContextBaseJavaModule {
 
-    ReactApplicationContext reactContext;
-    AlarmManager alarmManager;
+    private AlarmManager alarmManager;
+    private ReactApplicationContext reactContext;
 
     public RNLocalNotificationsModule(ReactApplicationContext reactContext) {
         super(reactContext);
+
         this.reactContext = reactContext;
+
         alarmManager = (AlarmManager) reactContext.getSystemService(Context.ALARM_SERVICE);
     }
 
@@ -31,8 +34,8 @@ public class RNLocalNotificationsModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void createNotification(Integer id, String text, String datetime, String sound) {
-        this.createAlarm(id, text, datetime, sound, false);
+    public void createNotification(Integer id, String title, String text, String datetime) {
+        this.createAlarm(id, title, text, datetime, false);
     }
 
     @ReactMethod
@@ -41,50 +44,51 @@ public class RNLocalNotificationsModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void updateNotification(Integer id, String text, String datetime, String sound) {
-        this.createAlarm(id, text, datetime, sound, true);
+    public void updateNotification(Integer id, String title, String text, String datetime) {
+        this.createAlarm(id, title, text, datetime, true);
     }
 
-    public void createAlarm(Integer id, String text, String datetime, String sound, boolean update) {
+    private void createAlarm(Integer id, String title, String text, String datetime, boolean update) {
         if (update) {
             this.deleteAlarm(id);
         }
 
-        final SimpleDateFormat desiredFormat = new SimpleDateFormat("yyyy-MM-dd kk:mm");
         Date dateToMillis = null;
         try {
+            SimpleDateFormat desiredFormat = new SimpleDateFormat("yyyy-MM-dd kk:mm");
             dateToMillis = desiredFormat.parse(datetime);
-        } catch (ParseException e) {
-            //TODO: if you want feedback...
-            e.printStackTrace();
+        } catch (ParseException paEx) {
+            paEx.printStackTrace();
         }
-        Long timeInMillis = dateToMillis.getTime();
 
-        Intent intent = new Intent(reactContext, AlarmReceiver.class);
-        intent.setAction("br.com.arauk.reactnative.localnotifications.showAlarm");
-        intent.putExtra("id", id);
-        intent.putExtra("text", text);
-        intent.putExtra("datetime", datetime);
-        intent.putExtra("sound", sound);
+        if (dateToMillis != null) {
+            Intent intent = new Intent(reactContext, AlarmReceiver.class);
+            intent.setAction("br.com.arauk.reactnative.localnotifications.showAlarm");
+            intent.putExtra("id", id);
+            intent.putExtra("title", title);
+            intent.putExtra("text", text);
+            intent.putExtra("datetime", datetime);
 
-        PendingIntent mAlarmSender = PendingIntent.getBroadcast(reactContext, id, intent, 0);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(reactContext, id, intent, 0);
 
-        Calendar date = Calendar.getInstance();
-        if (timeInMillis > date.getTimeInMillis()) {
-            alarmManager.set(AlarmManager.RTC_WAKEUP, timeInMillis, mAlarmSender);
+            Long triggerAtMillis = dateToMillis.getTime();
+            Calendar date = Calendar.getInstance();
+            if (triggerAtMillis > date.getTimeInMillis()) {
+                alarmManager.set(AlarmManager.RTC_WAKEUP, triggerAtMillis, pendingIntent);
+            }
         }
     }
 
-    public void deleteAlarm(Integer id) {
+    private void deleteAlarm(Integer id) {
         Intent intent = new Intent(reactContext, AlarmReceiver.class);
         intent.setAction("br.com.arauk.reactnative.localnotifications.showAlarm");
 
-        // cancel the alarm!
-        PendingIntent pi = PendingIntent.getBroadcast(reactContext, id, intent, PendingIntent.FLAG_NO_CREATE);
-        if (pi != null) {
-            pi.cancel();
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(reactContext, id, intent, PendingIntent.FLAG_NO_CREATE);
+        if (pendingIntent != null) {
+            pendingIntent.cancel();
         }
-        alarmManager.cancel(pi);
+
+        alarmManager.cancel(pendingIntent);
     }
 
 }
