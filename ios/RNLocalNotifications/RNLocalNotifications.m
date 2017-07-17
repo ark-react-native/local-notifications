@@ -27,30 +27,30 @@ RCT_EXPORT_METHOD(updateNotification:(NSInteger *)id title:(NSString *)title tex
     if(update){
         [self deleteAlarm:id];
     }
-    
+
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
-    
+
     NSDate *fireDate = [dateFormat dateFromString:datetime];
     if ([[NSDate date]compare: fireDate] == NSOrderedAscending) {
         int applicationIconBadgeNumber = ((int)[[[UIApplication sharedApplication] scheduledLocalNotifications] count] + 1);
-        
+
         NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
         [userInfo setValue:[NSNumber numberWithInteger:id] forKey:@"id"];
         [userInfo setValue:datetime forKey:@"datetime"];
         [userInfo setValue:text forKey:@"text"];
         [userInfo setValue:title forKey:@"title"];
-        
+
         UILocalNotification *notification = [[UILocalNotification alloc] init];
         notification.alertAction = @"Open";
         notification.alertBody = text;
         notification.alertTitle = title;
-        notification.applicationIconBadgeNumber = applicationIconBadgeNumbera;
+        notification.applicationIconBadgeNumber = applicationIconBadgeNumber;
         notification.fireDate = fireDate;
         notification.soundName = @"alarm.caf";
         notification.userInfo = userInfo;
         notification.timeZone = [NSTimeZone defaultTimeZone];
-        
+
         [[UIApplication sharedApplication] scheduleLocalNotification:notification];
     }
 }
@@ -58,10 +58,10 @@ RCT_EXPORT_METHOD(updateNotification:(NSInteger *)id title:(NSString *)title tex
 - (void)deleteAlarm:(NSInteger *)id {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSInteger comps = (NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit);
-    
+
     for (UILocalNotification * notification in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
         NSMutableDictionary *userInfo = [notification userInfo];
-        
+
         if ([[userInfo valueForKey:@"id"] integerValue] == [[NSNumber numberWithInteger:id] integerValue]) {
             [[UIApplication sharedApplication] cancelLocalNotification:notification];
         }
