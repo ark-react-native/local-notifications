@@ -15,12 +15,12 @@ import java.util.Calendar;
 import java.util.Date;
 
 @SuppressWarnings("WeakerAccess")
-public class RNLocalNotificationsModule extends ReactContextBaseJavaModule {
+public class ARNLocalNotificationsModule extends ReactContextBaseJavaModule {
 
     private AlarmManager alarmManager;
     private ReactApplicationContext reactContext;
 
-    public RNLocalNotificationsModule(ReactApplicationContext reactContext) {
+    public ARNLocalNotificationsModule(ReactApplicationContext reactContext) {
         super(reactContext);
 
         this.reactContext = reactContext;
@@ -30,7 +30,7 @@ public class RNLocalNotificationsModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "RNLocalNotifications";
+        return "ARNLocalNotifications";
     }
 
     @ReactMethod

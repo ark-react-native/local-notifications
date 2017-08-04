@@ -1,38 +1,37 @@
 {
-  "name": "react-native-ark-local-notifications",
-  "version": "0.2.1",
+  "author": "Rodrigo Scomazzon do Nascimento <rodrigo.sc.na@gmail.com> (http://www.rodrigosn.com/)",
+  "bugs": {
+    "email": "ark@arauk.com.br",
+    "url": "https://github.com/ark-react-native/local-notifications/issues"
+  },
+  "contributors": [],
   "description": "Manageable local notifications for React Native on iOS and Android.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ark-react-native/local-notifications"
+  "devDependencies": {
+    "eslint": "4.3.0",
+    "eslint-config-airbnb": "15.1.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jsx-a11y": "5.1.1",
+    "eslint-plugin-react": "7.1.0"
   },
   "keywords": [
     "android",
     "ios",
-    "local",
-    "native",
-    "notification",
-    "react",
+    "local-notifications",
+    "notifications",
     "react-native"
-  ],
-  "author": "Rodrigo Scomação do Nascimento <rodrigo.sc.na@gmail.com> (http://www.rodrigosn.com/)",
-  "contributors": [
-    "Gabriel Rosas <me@gabrielrosas.com>"
   ],
   "license": "MIT",
   "main": "index.js",
+  "name": "@ark-react-native/local-notifications",
+  "peerDependencies": {
+    "react-native": ">=0.47.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ark-react-native/local-notifications"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
   },
-  "peerDependencies": {
-    "react-native": ">=0.31.0"
-  },
-  "devDependencies": {
-    "eslint": "^3.11.1",
-    "eslint-config-airbnb": "^13.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^2.2.2",
-    "eslint-plugin-react": "^6.3.0",
-    "react-native": ">=0.31.0"
-  }
+  "version": "1.0.0"
 }

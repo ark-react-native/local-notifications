@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF75E3F81E2FBEDC005136CC /* RNLocalNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = AF75E3F71E2FBEDC005136CC /* RNLocalNotifications.m */; };
+		AF75E3F81E2FBEDC005136CC /* ARNLocalNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = AF75E3F71E2FBEDC005136CC /* ARNLocalNotifications.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +23,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		15209BEF1D250F63000D0F44 /* libRNLocalNotifications.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNLocalNotifications.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF75E3F71E2FBEDC005136CC /* RNLocalNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNLocalNotifications.m; path = RNLocalNotifications/RNLocalNotifications.m; sourceTree = SOURCE_ROOT; };
+		15209BEF1D250F63000D0F44 /* libARNLocalNotifications.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libARNLocalNotifications.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF75E3F71E2FBEDC005136CC /* ARNLocalNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARNLocalNotifications.m; path = ARNLocalNotifications/ARNLocalNotifications.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,18 +38,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		15209BF01D250F63000D0F44 /* RNLocalNotifications */ = {
+		15209BF01D250F63000D0F44 /* ARNLocalNotifications */ = {
 			isa = PBXGroup;
 			children = (
-				AF75E3F71E2FBEDC005136CC /* RNLocalNotifications.m */,
+				AF75E3F71E2FBEDC005136CC /* ARNLocalNotifications.m */,
 			);
-			path = RNLocalNotifications;
+			path = ARNLocalNotifications;
 			sourceTree = "<group>";
 		};
 		327633391BFAAD7E004DA88E = {
 			isa = PBXGroup;
 			children = (
-				15209BF01D250F63000D0F44 /* RNLocalNotifications */,
+				15209BF01D250F63000D0F44 /* ARNLocalNotifications */,
 				327633431BFAAD7E004DA88E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,7 +57,7 @@
 		327633431BFAAD7E004DA88E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				15209BEF1D250F63000D0F44 /* libRNLocalNotifications.a */,
+				15209BEF1D250F63000D0F44 /* libARNLocalNotifications.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,9 +65,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		15209BEE1D250F63000D0F44 /* RNLocalNotifications */ = {
+		15209BEE1D250F63000D0F44 /* ARNLocalNotifications */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 15209BF51D250F63000D0F44 /* Build configuration list for PBXNativeTarget "RNLocalNotifications" */;
+			buildConfigurationList = 15209BF51D250F63000D0F44 /* Build configuration list for PBXNativeTarget "ARNLocalNotifications" */;
 			buildPhases = (
 				15209BEB1D250F63000D0F44 /* Sources */,
 				15209BEC1D250F63000D0F44 /* Frameworks */,
@@ -77,9 +77,9 @@
 			);
 			dependencies = (
 			);
-			name = RNLocalNotifications;
-			productName = RNLocalNotifications;
-			productReference = 15209BEF1D250F63000D0F44 /* libRNLocalNotifications.a */;
+			name = ARNLocalNotifications;
+			productName = ARNLocalNotifications;
+			productReference = 15209BEF1D250F63000D0F44 /* libARNLocalNotifications.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -96,7 +96,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3276333D1BFAAD7E004DA88E /* Build configuration list for PBXProject "RNLocalNotifications" */;
+			buildConfigurationList = 3276333D1BFAAD7E004DA88E /* Build configuration list for PBXProject "ARNLocalNotifications" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -108,7 +108,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				15209BEE1D250F63000D0F44 /* RNLocalNotifications */,
+				15209BEE1D250F63000D0F44 /* ARNLocalNotifications */,
 			);
 		};
 /* End PBXProject section */
@@ -118,7 +118,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF75E3F81E2FBEDC005136CC /* RNLocalNotifications.m in Sources */,
+				AF75E3F81E2FBEDC005136CC /* ARNLocalNotifications.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +260,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		15209BF51D250F63000D0F44 /* Build configuration list for PBXNativeTarget "RNLocalNotifications" */ = {
+		15209BF51D250F63000D0F44 /* Build configuration list for PBXNativeTarget "ARNLocalNotifications" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15209BF61D250F63000D0F44 /* Debug */,
@@ -269,7 +269,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3276333D1BFAAD7E004DA88E /* Build configuration list for PBXProject "RNLocalNotifications" */ = {
+		3276333D1BFAAD7E004DA88E /* Build configuration list for PBXProject "ARNLocalNotifications" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				327633541BFAAD7E004DA88E /* Debug */,

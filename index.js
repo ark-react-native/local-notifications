@@ -1,19 +1,19 @@
 import { NativeModules } from 'react-native'
 
-const { RNLocalNotifications } = NativeModules
+const { ARNLocalNotifications } = NativeModules
 
-const ReactNativeLocalNotifications = {
+const ArkReactNativeLocalNotifications = {
   createNotification: (id, title, text, datetime) => {
-    RNLocalNotifications.createNotification(id, title, text, datetime)
+    ARNLocalNotifications.createNotification(id, title, text, datetime)
   },
 
   deleteNotification: (id) => {
-    RNLocalNotifications.deleteNotification(id)
+    ARNLocalNotifications.deleteNotification(id)
   },
 
   updateNotification: (id, title, text, datetime) => {
-    RNLocalNotifications.updateNotification(id, title, text, datetime)
+    ARNLocalNotifications.updateNotification(id, title, text, datetime)
   },
 }
 
-export default ReactNativeLocalNotifications
+export default ArkReactNativeLocalNotifications

@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "node"
+deploy:
+  provider: npm
+  email: "admin@arauk.com.br"
+  api_key: $NPM_TOKEN
+  on:
+    tags: true

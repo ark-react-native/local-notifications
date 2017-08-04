@@ -1,10 +1,10 @@
 #import <UIKit/UIKit.h>
 #import "RCTBridgeModule.h"
 
-@interface RNLocalNotifications : NSObject <RCTBridgeModule>
+@interface ARNLocalNotifications : NSObject <RCTBridgeModule>
 @end
 
-@implementation RNLocalNotifications
+@implementation ARNLocalNotifications
 
 RCT_EXPORT_MODULE();
 
@@ -48,8 +48,8 @@ RCT_EXPORT_METHOD(updateNotification:(NSInteger *)id title:(NSString *)title tex
         notification.applicationIconBadgeNumber = applicationIconBadgeNumber;
         notification.fireDate = fireDate;
         notification.soundName = @"alarm.caf";
-        notification.userInfo = userInfo;
         notification.timeZone = [NSTimeZone defaultTimeZone];
+        notification.userInfo = userInfo;
 
         [[UIApplication sharedApplication] scheduleLocalNotification:notification];
     }

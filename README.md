@@ -1,10 +1,10 @@
-# react-native-ark-local-notifications
+# @ark-react-native/local-notifications
 Manageable local notifications for React Native on iOS and Android. Create, update and delete local notifications by their unique id. The push notification title is the app name. When you open the app all displayed local notifications will be removed and the badge counter will be reset on iOS.
 
 ## Setup
 
 ```bash
-npm install react-native-ark-local-notifications
+npm install @ark-react-native/local-notifications
 ```
 
 Or add the latest version as dependeny to your package.json.
@@ -16,7 +16,7 @@ Or add the latest version as dependeny to your package.json.
   },
   "dependencies": {
     ...
-    "react-native-ark-local-notifications": "0.1.0",
+    "@ark-react-native/local-notifications": "^1.0.0",
     ...
   }
 ```
@@ -37,7 +37,7 @@ Or add the latest version as dependeny to your package.json.
       }
     }
     ```
-* Add Alarm.caf and Silence.caf to the Resources folder of your xcode project. (can be found in react-native-ark-local-notifications/ios/RNLocalNotifications)
+* Add Alarm.caf and Silence.caf to the Resources folder of your xcode project. (can be found in @ark-react-native/local-notifications/ios/RNLocalNotifications)
 
 ####Android
 * In the AndroidManifest.xml file of your android studio project add:
@@ -56,7 +56,7 @@ Or add the latest version as dependeny to your package.json.
 * In the settings.gradle
   ```
     include ':react-native-ark-local-notifications', ':app'
-    project(':react-native-ark-local-notifications').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-ark-local-notifications/android')
+    project(':react-native-ark-local-notifications').projectDir = new File(rootProject.projectDir, '../node_modules/@ark-react-native/local-notifications/android')
   ```
 * In the build.gradle
   ```
@@ -79,7 +79,7 @@ Or add the latest version as dependeny to your package.json.
 ## Usage
 
 ```javascript
-import RNLocalNotifications from 'react-native-ark-local-notifications';
+import RNLocalNotifications from '@ark-react-native/local-notifications';
 ...
 //RNLocalNotifications.createNotification(id, text, datetime, sound);
 RNLocalNotifications.createNotification(1, 'Some text', '2017-01-02 12:30', 'default');
