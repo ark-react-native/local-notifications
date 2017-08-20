@@ -24,7 +24,7 @@
   "main": "index.js",
   "name": "ark-react-native-local-notifications",
   "peerDependencies": {
-    "react-native": ">=0.47.1"
+    "react-native": ">=0.46.0"
   },
   "publishConfig": {
     "access": "public"
@@ -36,5 +36,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
   },
-  "version": "0.3.0"
+  "version": "0.3.1"
 }
