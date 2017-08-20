@@ -23,4 +23,13 @@ public class ARNLocalNotificationsPackage implements ReactPackage {
         return Collections.emptyList();
     }
 
+    /**
+     * Deprecated on React Native 0.47.*
+     *
+     * @return empty List of JavaScriptModule objects
+     */
+    public List<Class<? extends JavaScriptModule>> createJSModules() {
+        return Collections.emptyList();
+    }
+
 }
