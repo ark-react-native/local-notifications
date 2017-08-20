@@ -13,6 +13,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 @SuppressWarnings("WeakerAccess")
 public class ARNLocalNotificationsModule extends ReactContextBaseJavaModule {
@@ -55,7 +56,7 @@ public class ARNLocalNotificationsModule extends ReactContextBaseJavaModule {
 
         Date dateToMillis = null;
         try {
-            SimpleDateFormat desiredFormat = new SimpleDateFormat("yyyy-MM-dd kk:mm");
+            SimpleDateFormat desiredFormat = new SimpleDateFormat("yyyy-MM-dd kk:mm", Locale.getDefault());
             dateToMillis = desiredFormat.parse(datetime);
         } catch (ParseException paEx) {
             paEx.printStackTrace();

@@ -9,6 +9,7 @@ import android.content.res.Resources;
 import android.support.v4.app.NotificationCompat;
 
 public class AlarmReceiver extends BroadcastReceiver {
+
     @Override
     public void onReceive(Context context, Intent intent) {
         if (intent.getAction().equals("br.com.arauk.reactnative.localnotifications.showAlarm")) {
@@ -38,4 +39,5 @@ public class AlarmReceiver extends BroadcastReceiver {
             notificationManager.notify(packageName + ".notification", id, notificationBuilder.build());
         }
     }
+
 }
