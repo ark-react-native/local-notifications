@@ -56,7 +56,7 @@ public class ARNLocalNotificationsModule extends ReactContextBaseJavaModule {
 
         Date dateToMillis = null;
         try {
-            SimpleDateFormat desiredFormat = new SimpleDateFormat("yyyy-MM-dd kk:mm", Locale.getDefault());
+            SimpleDateFormat desiredFormat = new SimpleDateFormat("yyyy-MM-dd kk:mm Z", Locale.getDefault());
             dateToMillis = desiredFormat.parse(datetime);
         } catch (ParseException paEx) {
             paEx.printStackTrace();

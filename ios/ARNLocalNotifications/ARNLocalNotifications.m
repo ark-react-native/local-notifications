@@ -29,7 +29,7 @@ RCT_EXPORT_METHOD(updateNotification:(NSInteger *)id title:(NSString *)title tex
     }
 
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm ZZZ"];
 
     NSDate *fireDate = [dateFormat dateFromString:datetime];
     if ([[NSDate date]compare: fireDate] == NSOrderedAscending) {
