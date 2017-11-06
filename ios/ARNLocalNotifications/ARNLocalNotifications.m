@@ -43,7 +43,7 @@ RCT_EXPORT_METHOD(updateNotification:(NSInteger)id title:(NSString *)title text:
         notification.alertAction = @"Open";
         notification.alertBody = text;
         notification.alertTitle = title;
-        notification.applicationIconBadgeNumber = ((int)[[[UIApplication sharedApplication] scheduledLocalNotifications] count] + 1);
+        notification.applicationIconBadgeNumber = 1;
         notification.fireDate = fireDate;
         notification.soundName = @"alarm.caf";
         notification.timeZone = [NSTimeZone defaultTimeZone];
