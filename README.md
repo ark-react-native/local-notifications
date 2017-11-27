@@ -1,4 +1,6 @@
 # ark-react-native-local-notifications
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fark-react-native%2Flocal-notifications.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fark-react-native%2Flocal-notifications?ref=badge_shield)
+
 Manageable local notifications for React Native on iOS and Android. Create, update and delete local notifications by their unique id. The push notification title is the app name. When you open the app all displayed local notifications will be removed and the badge counter will be reset on iOS.
 
 ## Setup
@@ -101,3 +103,7 @@ RNLocalNotifications.createNotification(1);
 
 This project uses semantic versioning: MAJOR.MINOR.PATCH.
 This means that releases within the same MAJOR version are always backwards compatible. For more info see [semver.org](http://semver.org/).
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fark-react-native%2Flocal-notifications.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fark-react-native%2Flocal-notifications?ref=badge_large)
